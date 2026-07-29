@@ -31,6 +31,16 @@ a{color:var(--gold)}
 .content{flex:1}
 .graphic{width:300px;flex:0 0 300px;display:flex;align-items:center;justify-content:center;}
 
+/* improved button row and mini buttons */
+.button-row{display:flex;gap:0.8rem;margin-bottom:1.2rem;align-items:center;flex-wrap:wrap}
+.mini-btn{
+  position:relative;display:inline-flex;align-items:center;gap:0.6rem;padding:0.56rem 0.95rem;border-radius:999px;border:1px solid rgba(255,215,74,0.12);background:linear-gradient(180deg, rgba(255,215,74,0.04), rgba(255,215,74,0.01));color:var(--gold);text-decoration:none;font-size:0.95rem;font-weight:600;letter-spacing:0.2px;transition:transform .14s ease,box-shadow .14s ease,background .14s ease;backdrop-filter:blur(4px);box-shadow:inset 0 -1px 0 rgba(255,215,74,0.02), 0 6px 18px rgba(2,6,10,0.6);
+}
+.mini-btn::before{content:'';width:8px;height:8px;border-radius:2px;background:linear-gradient(180deg,#fff,#ffd54a);box-shadow:0 0 10px rgba(255,215,74,0.55);opacity:0.95}
+.mini-btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 40px rgba(255,200,0,0.08),0 0 30px rgba(255,215,74,0.06);background:linear-gradient(180deg, rgba(255,215,74,0.08), rgba(255,215,74,0.02))}
+.mini-btn:focus{outline:none;box-shadow:0 0 0 6px rgba(255,215,74,0.06)}
+.mini-btn[aria-current='page']{background:linear-gradient(90deg, rgba(255,215,74,0.12), rgba(255,215,74,0.04));box-shadow:0 12px 36px rgba(255,200,0,0.06)}
+
 .pixel-block{display:grid;gap:2px;padding:8px;background:linear-gradient(180deg,#0b1a10,#0a1310);border-radius:6px;box-shadow:0 6px 30px rgba(0,0,0,0.6) inset}
 .pixel-block .row{display:flex}
 .pixel-block span{width:22px;height:22px;display:inline-block;background:linear-gradient(180deg,#9b7b1a,#ffd54a);border:1px solid rgba(0,0,0,0.4);box-shadow:0 0 10px var(--gold-glow)}
@@ -61,4 +71,6 @@ a{color:var(--gold)}
   .section{flex-direction:column;padding:4rem 1.6rem}
   .graphic{width:220px;flex:0 0 220px}
   .glow{font-size:2.4rem}
+  .button-row{gap:0.6rem}
+  .mini-btn{padding:0.46rem 0.8rem;font-size:0.9rem}
 }
