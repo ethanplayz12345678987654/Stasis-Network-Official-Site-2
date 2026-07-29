@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stasis Network — Neon Gold</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Stasis Network — Minecraft server site with neon gold theme and scroll-triggered graphics">
+</head>
+<body>
+  <div class="scene" id="scene">
+    <header class="hero">
+      <div class="hero-inner">
+        <h1 class="glow">Stasis Network</h1>
+        <p class="subtitle">Fresh Minecraft servers — neon gold aesthetic</p>
+        <a class="cta" href="#join">Join the Network</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reveal" id="about">
+        <div class="content">
+          <h2>About Stasis</h2>
+          <p>Classic Minecraft gameplay with custom features. Scroll down to see animated blocks and neon-gold effects that react to scrolling.</p>
+        </div>
+        <div class="graphic" data-speed="0.3" aria-hidden="true">
+          <!-- simple pixel block made with CSS grid squares -->
+          <div class="pixel-block">
+            <div class="row">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="row">
+              <span></span><span class="center"></span><span></span>
+            </div>
+            <div class="row">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="features">
+        <div class="content">
+          <h2>Features</h2>
+          <ul class="features-list">
+            <li>Survival & Economy</li>
+            <li>Custom Quests</li>
+            <li>Events & Competitions</li>
+          </ul>
+        </div>
+        <div class="graphic" data-speed="0.6" aria-hidden="true">
+          <!-- SVG neon pickaxe -->
+          <svg viewBox="0 0 64 64" class="pickaxe">
+            <rect x="8" y="28" width="48" height="8" rx="2" fill="#111"/>
+            <rect x="28" y="8" width="8" height="48" rx="2" fill="#222"/>
+            <path d="M6 24 L20 12 L28 20 L14 32 Z" fill="#ffd54a" opacity="0.95"/>
+            <path d="M58 40 L44 52 L36 44 L50 32 Z" fill="#ffd54a" opacity="0.95"/>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section reveal" id="gallery">
+        <div class="content">
+          <h2>Gallery</h2>
+          <p>Blocks and builds that glow in neon gold.</p>
+          <div class="grid">
+            <div class="card reveal-item">Castle</div>
+            <div class="card reveal-item">Sky Island</div>
+            <div class="card reveal-item">Mega Farm</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="join">
+        <div class="content">
+          <h2>Join Us</h2>
+          <p>Connect: play.stasis.example</p>
+          <a class="cta" href="#">Copy IP</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© Stasis Network — Neon Gold Theme</p>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
