@@ -7,112 +7,6 @@
   <link rel="stylesheet" href="styles.css">
   <meta name="description" content="Stasis Network — Minecraft server site with great maintenance and graphics.">
 
-  <!-- Inline styles for the floating "Staff of the Month" card -->
-  <style>
-    .staff-of-month-card {
-      position: fixed;
-      right: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 280px;
-      background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(255,255,255,0.02));
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4), 0 0 18px rgba(255,215,0,0.15);
-      border: 1px solid rgba(255,215,0,0.25);
-      color: var(--text, #fff);
-      z-index: 9999;
-      backdrop-filter: blur(6px);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .staff-of-month-card:hover {
-      transform: translateY(-50%) scale(1.02);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 28px rgba(255,215,0,0.25);
-    }
-
-    .staff-of-month-card .title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      margin: 0 0 6px 0;
-      text-shadow: 0 0 10px rgba(255,215,0,0.18);
-    }
-
-    .staff-of-month-card .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: block;
-      margin-bottom: 10px;
-      border: 2px solid rgba(255,215,0,0.16);
-      box-shadow: 0 4px 14px rgba(255,215,0,0.06);
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,215,0,0.02));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: rgba(255,215,0,0.95);
-    }
-
-    .staff-of-month-card .name {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 6px 0 2px 0;
-      color: var(--accent, #ffd700);
-    }
-
-    .staff-of-month-card .reason {
-      font-size: 0.85rem;
-      color: var(--muted, rgba(255,255,255,0.7));
-      margin: 6px 0 0 0;
-    }
-
-    /* Soft pulsing glow */
-    @keyframes glowPulse {
-      0% { box-shadow: 0 0 8px rgba(255,215,0,0.08); }
-      50% { box-shadow: 0 0 18px rgba(255,215,0,0.16); }
-      100% { box-shadow: 0 0 8px rgba(255,215,0,0.08); }
-    }
-
-    .staff-of-month-card .glow-ring {
-      position: absolute;
-      inset: -6px -6px auto -6px;
-      border-radius: 14px;
-      pointer-events: none;
-      z-index: -1;
-      filter: blur(8px);
-      opacity: 0.9;
-      background: radial-gradient(circle at 20% 10%, rgba(255,215,0,0.18), transparent 20%), radial-gradient(circle at 80% 90%, rgba(255,120,80,0.06), transparent 25%);
-      animation: glowPulse 3s ease-in-out infinite;
-    }
-
-    /* Make sure this doesn't get in the way on very small screens */
-    @media (max-width: 780px) {
-      .staff-of-month-card {
-        position: fixed;
-        right: 12px;
-        top: auto;
-        bottom: 18px;
-        transform: none;
-        width: calc(100% - 36px);
-        max-width: 420px;
-        display: flex;
-        flex-direction: row;
-        gap: 12px;
-        align-items: center;
-        padding: 12px;
-      }
-
-      .staff-of-month-card .avatar { width: 56px; height: 56px; }
-      .staff-of-month-card .title { font-size: 0.95rem; }
-    }
-  </style>
 </head>
 <body>
   <div class="scene" id="scene">
@@ -127,15 +21,6 @@
     <main>
       <section class="section reveal" id="about">
         <div class="content">
-          <!-- Floating glowing "Staff of the Month" card placed above the two buttons -->
-          <div class="staff-of-month-card" role="complementary" aria-label="Staff of the Month">
-            <div class="glow-ring" aria-hidden="true"></div>
-            <div class="avatar" aria-hidden="true">S</div>
-            <div class="title">Staff of the Month</div>
-            <div class="name">EthanPLAYZ</div>
-            <div class="reason">For outstanding leadership and community work</div>
-          </div>
-
           <!-- New buttons added above the About header -->
           <div class="button-row" aria-hidden="false">
             <a class="mini-btn" href="meet-the-staff.html">Meet the Staff</a>
@@ -208,6 +93,10 @@
       <p>© Stasis Network — Neon Gold Theme</p>
     </footer>
   </div>
+
+  <!-- Staff of the Month: dynamically injected -->
+  <div id="staff-of-month-root" aria-live="polite"></div>
+  <script src="/staff-of-month.js" defer></script>
 
   <script src="script.js" defer></script>
 </body>
